@@ -9,9 +9,9 @@ License:	MIT
 Group:		Development/Python
 Url:		https://github.com/pyca/service_identity
 BuildArch:	noarch
-BuildRequires:	pythonegg(setuptools)
-Requires:	pythonegg(characteristic) >= 14.3.0
-Requires:	pythonegg(pyasn1-modules)
+BuildRequires:	python2-setuptools
+Requires:	python2-characteristic >= 14.3.0
+Requires:	python2-pyasn1-modules
 
 %description
 ===========================================
@@ -22,10 +22,10 @@ Service Identity Verification for pyOpenSSL
 %setup -q -n %{oname}-%{version}
 
 %build
-python setup.py build
+python2 setup.py build
 
 %install
-python setup.py install --root=%{buildroot}
+python2 setup.py install --root=%{buildroot}
 
 %files
 %doc AUTHORS.rst
@@ -33,5 +33,5 @@ python setup.py install --root=%{buildroot}
 %doc README.rst
 %doc docs/changelog.rst
 %doc docs/license.rst
-%{py_puresitedir}/service_identity/*.py*
-%{py_puresitedir}/service_identity*.egg-info
+%{py2_puresitedir}/service_identity/*.py*
+%{py2_puresitedir}/service_identity*.egg-info
