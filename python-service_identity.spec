@@ -1,6 +1,6 @@
 %define	oname	service_identity
 
-Name:		python-%{oname}
+Name:		python2-%{oname}
 Version:	14.0.0
 Release:	1
 Summary:	Service identity verification for pyOpenSSL
