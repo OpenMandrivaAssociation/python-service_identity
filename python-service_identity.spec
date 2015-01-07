@@ -10,8 +10,8 @@ Group:		Development/Python
 Url:		https://github.com/pyca/service_identity
 BuildArch:	noarch
 BuildRequires:	python2-setuptools
-Requires:	python2-characteristic >= 14.3.0
-Requires:	python2-pyasn1-modules
+Requires:	pythonegg(characteristic) >= 14.3.0
+Requires:	pythonegg(pyasn1-modules)
 
 %description
 ===========================================
