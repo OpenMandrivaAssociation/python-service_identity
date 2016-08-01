@@ -2,7 +2,7 @@
 
 Name:		python2-%{oname}
 Version:	14.0.0
-Release:	2
+Release:	3
 Summary:	Service identity verification for pyOpenSSL
 Source0:	http://pypi.python.org/packages/source/s/%{oname}/%{oname}-%{version}.tar.gz
 License:	MIT
@@ -12,6 +12,7 @@ BuildArch:	noarch
 BuildRequires:	python2-setuptools
 Requires:	pythonegg(characteristic) >= 14.3.0
 Requires:	pythonegg(pyasn1-modules)
+%rename		python-%oname
 
 %description
 ===========================================
