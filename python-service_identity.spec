@@ -10,6 +10,7 @@ Group:		Development/Python
 Url:		https://github.com/pyca/service_identity
 BuildArch:	noarch
 BuildRequires:	python2-setuptools
+BuildRequires:	python-setuptools
 
 %description
 ===========================================
