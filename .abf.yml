@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   service_identity-14.0.0.tar.gz: 10d7e29937f22d516659533f83af1e1427afdbd0
+sources:
+  service_identity-17.0.0.tar.gz: 63408ac8b2cfd70f3b31fdcfefc1414b5b965cbc
