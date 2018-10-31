@@ -2,7 +2,7 @@
 
 Name:		python-%{oname}
 Version:	17.0.0
-Release:	1
+Release:	2
 Summary:	Service identity verification for pyOpenSSL
 Source0:	http://pypi.python.org/packages/source/s/%{oname}/%{oname}-%{version}.tar.gz
 License:	MIT
