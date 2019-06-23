@@ -21,6 +21,9 @@ Service Identity Verification for pyOpenSSL
 Summary:        Python 2.x library for service identity
 Group:          Development/Python
 
+%description -n python2-%{oname}
+Python 2.x library for service identity
+
 %prep
 %setup -q -n %{oname}-%{version}
 mkdir python2
