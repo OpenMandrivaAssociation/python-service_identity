@@ -11,6 +11,7 @@ Url:		https://github.com/pyca/service_identity
 BuildArch:	noarch
 BuildRequires:	python-setuptools
 BuildRequires:	python-pkg-resources
+Requires: python3dist(pyasn1-modules)
 
 %description
 ===========================================
