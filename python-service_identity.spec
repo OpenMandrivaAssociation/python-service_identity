@@ -21,13 +21,10 @@ Service Identity Verification for pyOpenSSL
 %setup -q -n service-identity-%{version}
 
 %build
-python3 setup.py build
-
+%py_build
 
 %install
-
-pushd python3
-python3 setup.py install --root=%{buildroot}
+%py_install
 
 %files
 %doc python3/AUTHORS.rst
