@@ -9,45 +9,25 @@ License:	MIT
 Group:		Development/Python
 Url:		https://github.com/pyca/service_identity
 BuildArch:	noarch
-BuildRequires:	python2-setuptools
 BuildRequires:	python-setuptools
 BuildRequires:	python-pkg-resources
-BuildRequires:	python2-pkg-resources
 
 %description
 ===========================================
 Service Identity Verification for pyOpenSSL
 ===========================================
 
-%package -n python2-%{oname}
-Summary:        Python 2.x library for service identity
-Group:          Development/Python
-
-%description -n python2-%{oname}
-Python 2.x library for service identity
-
 %prep
 %setup -q -n service-identity-%{version}
-mkdir python2
-mv `ls |grep -v python2` python2
-cp -a python2 python3
 
 %build
-pushd python2
-python2 setup.py build
-popd
-pushd python3
 python3 setup.py build
-popd
+
 
 %install
-pushd python2
-python2 setup.py install --root=%{buildroot}
-popd
 
 pushd python3
 python3 setup.py install --root=%{buildroot}
-popd
 
 %files
 %doc python3/AUTHORS.rst
@@ -57,12 +37,3 @@ popd
 %doc python3/docs/license.rst
 %{py3_puresitedir}/service_identity/*.py*
 %{py3_puresitedir}/service_identity*.egg-info
-
-%files -n python2-%{oname}
-%doc python2/AUTHORS.rst
-%doc python2/LICENSE
-%doc python2/README.rst
-%doc python2/docs/changelog.rst
-%doc python2/docs/license.rst
-%{py2_puresitedir}/service_identity/*.py*
-%{py2_puresitedir}/service_identity*.egg-info
