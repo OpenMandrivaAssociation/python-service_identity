@@ -27,10 +27,5 @@ Service Identity Verification for pyOpenSSL
 %py_install
 
 %files
-%doc python3/AUTHORS.rst
-%doc python3/LICENSE
-%doc python3/README.rst
-%doc python3/docs/changelog.rst
-%doc python3/docs/license.rst
 %{py3_puresitedir}/service_identity/*.py*
 %{py3_puresitedir}/service_identity*.egg-info
