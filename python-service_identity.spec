@@ -57,7 +57,6 @@ popd
 %doc python3/docs/license.rst
 %{py3_puresitedir}/service_identity/*.py*
 %{py3_puresitedir}/service_identity*.egg-info
-%{py3_puresitedir}/service_identity/__pycache__/
 
 %files -n python2-%{oname}
 %doc python2/AUTHORS.rst
