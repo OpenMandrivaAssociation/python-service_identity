@@ -1,10 +1,10 @@
 %define	oname	service_identity
 
 Name:		python-%{oname}
-Version:	18.1.0
-Release:	2
+Version:	21.1.0
+Release:	1
 Summary:	Service identity verification for pyOpenSSL
-Source0:	https://files.pythonhosted.org/packages/9a/3d/9eb0563e066ea0540cf580695593ab079376e920016d4d1b3ff2fd8abf4b/service_identity-18.1.0.tar.gz
+Source0:	https://files.pythonhosted.org/packages/9a/3d/9eb0563e066ea0540cf580695593ab079376e920016d4d1b3ff2fd8abf4b/service_identity-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		https://github.com/pyca/service_identity
