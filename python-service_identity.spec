@@ -1,25 +1,59 @@
-%define	oname	service_identity
+%define module service-identity
+%define uname service_identity
 
-Name:		python-%{oname}
-Version:	21.1.0
-Release:	2
-Summary:	Service identity verification for pyOpenSSL
-Source0:	https://files.pythonhosted.org/packages/9a/3d/9eb0563e066ea0540cf580695593ab079376e920016d4d1b3ff2fd8abf4b/service-identity-%{version}.tar.gz
+Name:		python-%{uname}
+Version:	24.2.0
+Release:	1
+Summary:	Service Identity Verification for pyOpenSSL & cryptography
+Source0:	https://github.com/pyca/service-identity/archive/refs/tags/%{version}/%{module}-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		https://github.com/pyca/service_identity
+BuildSystem: python
 BuildArch:	noarch
-BuildRequires:	python-setuptools
-BuildRequires:	python-pkg-resources
-Requires: python3dist(pyasn1-modules)
+
+BuildRequires:	python
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(attrs)
+BuildRequires:	python%{pyver}dist(cryptography)
+BuildRequires:	python%{pyver}dist(hatchling)
+BuildRequires:	python%{pyver}dist(hatch-fancy-pypi-readme)
+BuildRequires:	python%{pyver}dist(hatch-vcs)
+BuildRequires:	python%{pyver}dist(idna)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(pyopenssl)
+BuildRequires:	python%{pyver}dist(pyasn1)
+BuildRequires:	python%{pyver}dist(pyasn1-modules)
+BuildRequires:	python%{pyver}dist(pytest)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
+Requires:	python%{pyver}dist(attrs)
+Requires:	python%{pyver}dist(cryptography)
+Requires:	python%{pyver}dist(pyasn1)
+Requires:	python%{pyver}dist(asn1-modules)
+Suggests:	python%{pyver}dist(idna)
+Suggests:	python%{pyver}dist(pyopenssl)
+
 
 %description
-===========================================
-Service Identity Verification for pyOpenSSL
-===========================================
+Use this package if:
+
+  You want to verify that a PyCA cryptography certificate is valid for a
+  certain hostname or IP address,
+
+  Or if you use pyOpenSSL and don’t want to be MITMed,
+
+  Or if you want to inspect certificates from either for service IDs.
+
+service-identity aspires to give you all the tools you need for verifying
+whether a certificate is valid for the intended purposes.
+
+In the simplest case, this means host name verification.
+
+However, service-identity implements RFC 6125 fully.
 
 %prep
-%setup -q -n service-identity-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
 %py_build
@@ -28,5 +62,6 @@ Service Identity Verification for pyOpenSSL
 %py_install
 
 %files
-%{py3_puresitedir}/service_identity/*.py*
-%{py3_puresitedir}/service_identity*.egg-info
+%{py3_puresitedir}/%{uname}
+%{py3_puresitedir}/%{uname}-%{version}*.dist-info
+%license LICENSE
