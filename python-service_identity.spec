@@ -30,7 +30,7 @@ BuildRequires:	python%{pyver}dist(wheel)
 Requires:	python%{pyver}dist(attrs)
 Requires:	python%{pyver}dist(cryptography)
 Requires:	python%{pyver}dist(pyasn1)
-Requires:	python%{pyver}dist(asn1-modules)
+Requires:	python%{pyver}dist(pyasn1-modules)
 Suggests:	python%{pyver}dist(idna)
 Suggests:	python%{pyver}dist(pyopenssl)
 
