@@ -3,7 +3,7 @@
 
 Name:		python-%{uname}
 Version:	24.2.0
-Release:	1
+Release:	2
 Summary:	Service Identity Verification for pyOpenSSL & cryptography
 Source0:	https://github.com/pyca/service-identity/archive/refs/tags/%{version}/%{module}-%{version}.tar.gz
 License:	MIT
@@ -52,16 +52,7 @@ In the simplest case, this means host name verification.
 
 However, service-identity implements RFC 6125 fully.
 
-%prep
-%setup -q -n %{module}-%{version}
-
-%build
-%py_build
-
-%install
-%py_install
-
 %files
-%{py3_puresitedir}/%{uname}
-%{py3_puresitedir}/%{uname}-%{version}*.dist-info
+%{py_puresitedir}/%{uname}
+%{py_puresitedir}/%{uname}-%{version}*.dist-info
 %license LICENSE
