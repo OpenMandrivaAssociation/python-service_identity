@@ -2,8 +2,8 @@
 %define uname service_identity
 
 Name:		python-%{uname}
-Version:	24.2.0
-Release:	2
+Version:	26.1.0
+Release:	1
 Summary:	Service Identity Verification for pyOpenSSL & cryptography
 Source0:	https://github.com/pyca/service-identity/archive/refs/tags/%{version}/%{module}-%{version}.tar.gz
 License:	MIT
