@@ -3,7 +3,7 @@
 
 Name:		python-%{uname}
 Version:	26.1.0
-Release:	1
+Release:	2
 Summary:	Service Identity Verification for pyOpenSSL & cryptography
 Source0:	https://github.com/pyca/service-identity/archive/refs/tags/%{version}/%{module}-%{version}.tar.gz
 License:	MIT
@@ -12,7 +12,6 @@ Url:		https://github.com/pyca/service_identity
 BuildSystem: python
 BuildArch:	noarch
 
-BuildRequires:	python
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(attrs)
 BuildRequires:	python%{pyver}dist(cryptography)
@@ -24,7 +23,6 @@ BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(pyopenssl)
 BuildRequires:	python%{pyver}dist(pyasn1)
 BuildRequires:	python%{pyver}dist(pyasn1-modules)
-BuildRequires:	python%{pyver}dist(pytest)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
 Requires:	python%{pyver}dist(attrs)
@@ -34,6 +32,8 @@ Requires:	python%{pyver}dist(pyasn1-modules)
 Suggests:	python%{pyver}dist(idna)
 Suggests:	python%{pyver}dist(pyopenssl)
 
+%build -p
+export SETUPTOOLS_SCM_PRETEND_VERSION="%{version}"
 
 %description
 Use this package if:
